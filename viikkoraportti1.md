@@ -20,3 +20,9 @@ Mitä teen seuraavaksi?
 	Seuraavaksi tutustun kompressoimiseen tarkemmin. Luen algoritmeja, valitsen millaisia 
 	tiedostoja haluan etenkin kompressoida --> mikä niihin voisi sopia. Tämän jälkeen alan
 	kirjoittaa Java-koodia.
+
+
+
+TUNTIKIRJANPITO
+	
+	Week 1, 1h
