@@ -1,21 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package tiralaba;
 
 import java.util.HashMap;
 
-/**
- *
- * @author thureson
- */
 public class Pakkaaja {
     private HashMap<String, String> encode;
     private String input;
     private String charset;
-    
+
+    /* Pakkaaja-konstruktori asettaa mahdolliset kirjaimet inputille. 
+    Jos sisään annetaan vain yksi parametri, annetaan oletus -> pienet ja suuret aakkoset + väli*/
     public Pakkaaja(String input){
         this(input, "abcdefghijklmnopqrstuvwxyzåäö ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ");
     }
@@ -47,7 +41,8 @@ public class Pakkaaja {
 //        }
 //        return pakattu;
 //    }
-    
+
+/* To be */    
     public String unpakkaa(String input){
         String unpakattu = "";
 //      stuff  
@@ -56,6 +51,7 @@ public class Pakkaaja {
         return unpakattu;
     }
     
+    /* esiintyvyys laskee kaikkien merkkien määrät inputista HashMappiin */
     public HashMap esiintyvyys(){
         HashMap<Character, Integer> aakkoset = new HashMap();
  

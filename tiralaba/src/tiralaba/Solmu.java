@@ -1,5 +1,6 @@
 package tiralaba;
 
+/* Pakollinen osa puu-rakennetta */
 public class Solmu {
     private char key;
     private Solmu left;
@@ -13,6 +14,7 @@ public class Solmu {
         this.parent = parent;
     }
     
+    /* Tarkistetaan onko solmulla lapsia */
     public boolean onLehti(){
         if (left == null && right == null){
             return true;
