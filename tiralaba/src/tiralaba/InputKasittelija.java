@@ -3,18 +3,18 @@ package tiralaba;
 
 import java.util.HashMap;
 
-public class Pakkaaja {
+public class InputKasittelija {
     private HashMap<String, String> encode;
     private String input;
     private String charset;
 
     /* Pakkaaja-konstruktori asettaa mahdolliset kirjaimet inputille. 
     Jos sisään annetaan vain yksi parametri, annetaan oletus -> pienet ja suuret aakkoset + väli*/
-    public Pakkaaja(String input){
+    public InputKasittelija(String input){
         this(input, "abcdefghijklmnopqrstuvwxyzåäö ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ");
     }
     
-    public Pakkaaja(String input, String charset){
+    public InputKasittelija(String input, String charset){
         this.encode = new HashMap();
         this.input = input;
         this.charset = charset;

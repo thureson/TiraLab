@@ -11,7 +11,7 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import tiralaba.Pakkaaja;
+import tiralaba.InputKasittelija;
 
 /**
  *
@@ -50,7 +50,7 @@ public class PakkaajaTest {
     @Test
     public void esiintyvyysTest(){
         String test = "aa";
-        Pakkaaja pakkaaja = new Pakkaaja(test);
+        InputKasittelija pakkaaja = new InputKasittelija(test);
         HashMap teset = pakkaaja.esiintyvyys();
         assertEquals(teset.get('a'), 2);
     }

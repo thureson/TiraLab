@@ -7,7 +7,7 @@ public class Tiralaba {
 
     public static void main(String[] args) {
         String input = "Olen jo kauan tiennyt kuinka toteutan tämän algoritmin";
-        Pakkaaja packman = new Pakkaaja(input);
+        InputKasittelija packman = new InputKasittelija(input);
         HashMap<Character, Integer> esiintyvyys = packman.esiintyvyys();
 //        Solmu root = teePuu(esiintyvyys);
 //        String packed = packman.pakkaa(input);
