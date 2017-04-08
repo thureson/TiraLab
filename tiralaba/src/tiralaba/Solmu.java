@@ -5,17 +5,17 @@ public class Solmu {
     private char key;
     private Solmu left;
     private Solmu right;
-    private Solmu parent;
+    private int maara;
     
-    public Solmu(char key, Solmu left, Solmu right, Solmu parent){
+    public Solmu(char key, Solmu left, Solmu right, int maara){
         this.key = key;
         this.left = left;
         this.right = right;
-        this.parent = parent;
+        this.maara = maara;
     }
     
     /* Tarkistetaan onko solmulla lapsia */
-    public boolean onLehti(){
+    public boolean onkoLehti(){
         if (left == null && right == null){
             return true;
         } else {
@@ -35,7 +35,7 @@ public class Solmu {
         return this.right;
     }
     
-    public Solmu returnParent(){
-        return this.parent;
+    public int returnMaara(){
+        return this.maara;
     }
 }
