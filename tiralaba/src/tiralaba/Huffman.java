@@ -2,8 +2,6 @@ package tiralaba;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import static javafx.scene.input.KeyCode.R;
-import javax.xml.soap.Node;
 
 public class Huffman {
     
@@ -17,12 +15,23 @@ public class Huffman {
         int[] esiintyvyys = esiintyvyys2(input.toCharArray());
         Solmu juuri = teePuu(esiintyvyys);
         
+        String[] codingTaulukko = new String[256];
+        teeCoding(codingTaulukko, juuri, "");
         
-        String b = converter.stringToBinary(input);
+//        System.out.println("\nTaulukko");
+//        for (int s = 0; s < 256; s++){
+//            System.out.print(".." + codingTaulukko[s] + " " + (char) s);
+//        }
+//        System.out.println(codingTaulukko);
         
-                
+        String bits = "";
+        for (char c : input.toCharArray()){
+            bits += codingTaulukko[c];
+        } 
         
-        return bits;
+//        System.out.println(bits);
+//        String b = converter.stringToBinary(input);
+        return Integer.parseInt(bits, 2);
     }
     
     public int unpakkaa(int input){ // MUOKKAA INPUT -------- TYYPPI VÄÄRÄ
@@ -30,6 +39,16 @@ public class Huffman {
         
         
         return bits;
+    }
+    
+     private static void teeCoding(String[] st, Solmu solmu, String code) {
+        if (!solmu.onkoLehti()) {
+            teeCoding(st, solmu.returnLeft(),  code + '0');
+            teeCoding(st, solmu.returnRight(), code + '1');
+        }
+        else {
+            st[solmu.returnKey()] = code;
+        }
     }
     
     public HashMap esiintyvyys(String input){
@@ -46,7 +65,7 @@ public class Huffman {
         return esiintyvyys;
     }
     
-    public static int[] esiintyvyys2(char[] input){
+    public int[] esiintyvyys2(char[] input){
         int[] esiintyvyys = new int[256];
         for (int i = 0; i < input.length; i++){
             esiintyvyys[input[i]]++;
@@ -65,14 +84,17 @@ public class Huffman {
             }
         }
         
-        sorted = sorter.InsertionSortSolmuille(sorted);
+        sorted = sorter.InsertionSort2(sorted);
+//        for (Solmu m : sorted){
+//            System.out.print(" " + m.returnKey() + "" + m.returnMaara());
+//        }
         
         while (sorted.size() > 1) {
             Solmu left  = sorted.remove(0);
             Solmu right  = sorted.remove(0);
             Solmu parent = new Solmu('\0', left, right, left.returnMaara() + right.returnMaara());
             sorted.add(parent);
-            sorter.InsertionSortSolmuille(sorted);
+            sorted = sorter.InsertionSort2(sorted);
         }
         
         return sorted.remove(0);

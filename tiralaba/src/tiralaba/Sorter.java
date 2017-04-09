@@ -19,6 +19,7 @@ public class Sorter {
             int m;
             for (m = i-1; m >= 0 && temp < esiintyvyys[m]; m++){
                 esiintyvyys[m+1] = esiintyvyys[m];
+                esiintyvyys[m+1] = temp;
             }
             esiintyvyys[m+1] = temp;
         }
@@ -27,7 +28,7 @@ public class Sorter {
     }
     
     public ArrayList InsertionSortSolmuille(ArrayList<Solmu> esiintyvyys){
-        for (int i=1; i < esiintyvyys.size(); i++){
+        for (int i = 1; i < esiintyvyys.size(); i++){
             Solmu temp = esiintyvyys.get(i);
             int m;
             for (m = i-1; m >= 0 && temp.returnMaara() < esiintyvyys.get(m).returnMaara(); m++){
@@ -37,5 +38,19 @@ public class Sorter {
         }
         
         return esiintyvyys;
+    }
+    
+    public ArrayList InsertionSort2(ArrayList<Solmu> input){
+        Solmu temp;
+        for (int i = 1; i < input.size(); i++){
+            for (int j = i; j > 0; j--){
+                if (input.get(j).returnMaara() < input.get(j-1).returnMaara()){
+                    temp = input.get(j);
+                    input.set(j, input.get(j-1));
+                    input.set(j-1, temp);
+                }
+            }
+        }
+        return input;
     }
 }

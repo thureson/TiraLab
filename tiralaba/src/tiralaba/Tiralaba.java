@@ -1,11 +1,11 @@
 package tiralaba;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Tiralaba {
 
     public static void main(String[] args) {
+        
         String input = "Olen jo kauan tiennyt kuinka toteutan tämän algoritmin";
         Huffman huffman = new Huffman();
         HashMap<Character, Integer> esiintyvyys = huffman.esiintyvyys(input);
@@ -14,20 +14,23 @@ public class Tiralaba {
 //        HashMap<Character, Integer> esiintyvyys = packman.esiintyvyys();
         Converter converter = new Converter();
         
-        System.out.println(esiintyvyys);
-        
-        String b = converter.stringToBinary(input);
-        System.out.println(b);
-        
-        String t = converter.binaryToString(b);
-        System.out.println(t);
-        
+//        String b = converter.stringToBinary(input);
+//        System.out.println(b);
+//        
+//        String t = converter.binaryToString(b);
+//        System.out.println(t);
+//        
+//        System.out.println(esiintyvyys);
         Solmu juuri = Huffman.teePuu(esiintyvyys2);
-        
+//        System.out.println(juuri.returnMaara());
+//        Visual visual = new Visual();
+//        visual.tulostaPuu(juuri);
+        int packed = huffman.pakkaa(input);
+        System.out.println(packed);
 //        Solmu root = teePuu(esiintyvyys);
 //        String packed = packman.pakkaa(input);
 //        String original = packman.unpakkaa(packed);
-        
+//        
     }    
 //    
 //    public static Solmu teePuu(HashMap<Character, Integer> esiintyvyys){
