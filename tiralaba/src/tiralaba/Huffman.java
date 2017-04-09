@@ -8,7 +8,7 @@ public class Huffman {
     public Huffman(){
     }
     
-    public int pakkaa(String input){ // MUOKKAA INPUT -------- TYYPPI VÄÄRÄ        
+    public byte[] pakkaa(String input){ // MUOKKAA INPUT -------- TYYPPI VÄÄRÄ        
         Converter converter = new Converter();
         char[] inpu = input.toCharArray();
         
@@ -29,9 +29,15 @@ public class Huffman {
             bits += codingTaulukko[c];
         } 
         
+        byte[] bytes = bits.getBytes();
+//        ArrayList<Integer> bytes = new ArrayList<>();
+//        for(String str : bits.split("(?<=\\G.{8})")){
+//            bytes.add(Integer.parseInt(str, 2));
+//        }
+        
 //        System.out.println(bits);
 //        String b = converter.stringToBinary(input);
-        return Integer.parseInt(bits, 2);
+        return bytes;
     }
     
     public int unpakkaa(int input){ // MUOKKAA INPUT -------- TYYPPI VÄÄRÄ
