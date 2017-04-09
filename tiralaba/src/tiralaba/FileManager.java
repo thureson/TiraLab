@@ -35,6 +35,14 @@ public class FileManager {
         FileOutputStream fos = new FileOutputStream(kTiedosto);
         fos.write(bytes);
         fos.close();
-    }   
+    }
+    
+    public void kirjoitaTiedostoIntegers(int bytes, String kTiedosto) throws IOException{
+//        Path path = (Path) Paths.get(kTiedosto);
+//        Files.write(path, bytes);
+        FileOutputStream fos = new FileOutputStream(kTiedosto);
+        fos.write(bytes);
+        fos.close();
+    }
 }
 

@@ -17,6 +17,9 @@ public class Huffman {
         
         String[] codingTaulukko = new String[256];
         teeCoding(codingTaulukko, juuri, "");
+//        for (int f = 0; f < 256; f++){
+//            System.out.println(codingTaulukko[f] + " " + (char) f + esiintyvyys[f]);
+//        }
         
 //        System.out.println("\nTaulukko");
 //        for (int s = 0; s < 256; s++){
@@ -25,11 +28,23 @@ public class Huffman {
 //        System.out.println(codingTaulukko);
         
         String bits = "";
+//        System.out.println(bits.isEmpty());
+        int count = 0;
+        int max = input.length();
         for (char c : input.toCharArray()){
+            if (bits.length() == max){     // SOOOO STUPID, fix!
+                break;
+            }
+//            System.out.println(c);
             bits += codingTaulukko[c];
+            
+//            System.out.println(bits);
         } 
         
+//        int bytes = Integer.parseInt(bits, 2);
         byte[] bytes = bits.getBytes();
+        
+//        System.out.println(bytes[0]);
 //        ArrayList<Integer> bytes = new ArrayList<>();
 //        for(String str : bits.split("(?<=\\G.{8})")){
 //            bytes.add(Integer.parseInt(str, 2));
