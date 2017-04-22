@@ -2,7 +2,7 @@ package tiralaba;
 
 public class Converter {
 
-    public static String stringToBinary(String input) {
+    public String stringToBinary(String input) {
         String b = "";
         String temp = "";
         for (int i = 0; i < input.length(); i++) {
@@ -16,7 +16,7 @@ public class Converter {
         return b;
     }
 
-    public static String binaryToString(String binary) {
+    public String binaryToString(String binary) {
         String[] text = binary.split(" ");
         String word = "";
         for (int i = 0; i < text.length; i++) {

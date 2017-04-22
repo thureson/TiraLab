@@ -2,12 +2,12 @@ package tiralaba;
 
 /* Pakollinen osa puu-rakennetta */
 public class Solmu {
-    private char key;
+    private byte key;
     private Solmu left;
     private Solmu right;
     private int maara;
     
-    public Solmu(char key, Solmu left, Solmu right, int maara){
+    public Solmu(byte key, Solmu left, Solmu right, int maara){
         this.key = key;
         this.left = left;
         this.right = right;
@@ -23,7 +23,7 @@ public class Solmu {
         }
     }
     
-    public char returnKey(){
+    public byte returnKey(){
         return this.key;
     }
     
