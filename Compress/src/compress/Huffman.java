@@ -22,11 +22,25 @@ public class Huffman {
         Coding coding = new Coding(root);
         coding.build(root, new ArrayList<>());
         Encoder encoder = new Encoder(out, coding);
-        
-//        Helper helper = new Helper();
-//        helper.printNodes(root);
-//        helper.printCoding(freqTable, coding);
-        
+
+        int count = 0;
+        while (true){
+            int c = in.read();
+            if (c == -1){
+                break;
+            }
+            encoder.write(c);
+            count++;
+        }
+    }
+    
+    public void decompress(char[] input, InputStream in, OutStream out) throws IOException{
+        int[] freqTable = freqTable(input);
+        Node root = huffmanTree(freqTable);
+        Coding coding = new Coding(root);
+        coding.build(root, new ArrayList<>());
+        Encoder encoder = new Encoder(out, coding);
+
         int count = 0;
         while (true){
             int c = in.read();

@@ -32,4 +32,8 @@ public class Coding {
     public List<Integer> returnCode(int c){
         return coding.get(c);
     }
+    
+    public Node returnRoot(){
+        return root;
+    }
 }
