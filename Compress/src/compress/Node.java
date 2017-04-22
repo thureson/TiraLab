@@ -1,7 +1,7 @@
 package compress;
 
 /* Pakollinen osa puu-rakennetta */
-public class Node {
+public class Node implements Comparable {
     private char key;
     private Node left;
     private Node right;

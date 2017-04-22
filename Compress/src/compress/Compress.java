@@ -37,11 +37,9 @@ public class Compress {
         }
     }
     
-    public static void compress(InputStream in, OutStream out){
-        
-        
+    public static void compress(InputStream in, OutStream out) throws IOException{
         Huffman huffman = new Huffman();
-        huffman.compress();
+        huffman.compress("adadadaww".toCharArray(),in, out);
     }
     
 }
