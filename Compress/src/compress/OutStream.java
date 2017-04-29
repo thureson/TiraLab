@@ -24,6 +24,14 @@ public class OutStream {
                 bitsFilled = 0;
         }
     }
+    
+    public void writeChar(char c) throws IOException{
+        output.write(c);
+    }
+    
+    public void writeInt(int i) throws IOException{
+        output.write(i);
+    }
 
     public void close() throws IOException {
         while (bitsFilled != 0){

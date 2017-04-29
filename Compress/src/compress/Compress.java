@@ -29,6 +29,7 @@ public class Compress {
         // FileIOs
         InputStream in = new BufferedInputStream(new FileInputStream(inputFile));
         OutStream out = new OutStream(new BufferedOutputStream(new FileOutputStream(outputFile)));
+        InStream ins = new InStream(new BufferedInputStream(new FileInputStream(inputFile)));
         try {
             compress(in, out);
         } finally {
@@ -39,7 +40,12 @@ public class Compress {
     
     public static void compress(InputStream in, OutStream out) throws IOException{
         Huffman huffman = new Huffman();
-        huffman.compress("adadadaww".toCharArray(),in, out);
+        huffman.compress("xvzbnmbfsdkjhfjkweryuitwjlgjsöoiwpuiohslkjhvxmnbmzjhkfsfuiweyuriyhiudhaiucgyuwfduizcsfgqfwyetfyxvzbnmbfsdkjhfjkweryuitwjlgjsöoiwpuiohslkjhvxmnbmzjhkfsfuiweyuriyhiudhaiucgyuwfduizcsfgqfwyetfyxvzbnmbfsdkjhfjkweryuitwjlgjsöoiwpuiohslkjhvxmnbmzjhkfsfuiweyuriyhiudhaiucgyuwfduizcsfgqfwyetfyxvzbnmbfsdkjhfjkweryuitwjlgjsöoiwpuiohslkjhvxmnbmzjhkfsfuiweyuriyhiudhaiucgyuwfduizcsfgqfwyetfyxvzbnmbfsdkjhfjkweryuitwjlgjsöoiwpuiohslkjhvxmnbmzjhkfsfuiweyuriyhiudhaiucgyuwfduizcsfgqfwyetfyxvzbnmbfsdkjhfjkweryuitwjlgjsöoiwpuiohslkjhvxmnbmzjhkfsfuiweyuriyhiudhaiucgyuwfduizcsfgqfwyetfy".toCharArray(), in, out);
+    }
+    
+    public static void decompress(InStream ins, OutStream out) throws IOException{
+        Huffman huffman = new Huffman();
+        huffman.decompress(ins, out);
     }
     
 }

@@ -10,7 +10,7 @@ public class InStream {
     private int bitsRemaining;
 
     public InStream(InputStream input) {
-            input = input;
+            this.input = input;
             currentByte = 0;
             bitsRemaining = 0;
     }
@@ -32,6 +32,10 @@ public class InStream {
 //                currentByte++;
 //                bitsFilled = 0;
 //        }
+    }
+    
+    public int readByte() throws IOException{
+        return input.read();
     }
 
     public void close() throws IOException {

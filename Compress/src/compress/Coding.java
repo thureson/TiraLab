@@ -36,4 +36,8 @@ public class Coding {
     public Node returnRoot(){
         return root;
     }
+    
+    public List<List<Integer>> returnCodingTable(){
+        return this.coding;
+    }
 }
