@@ -2,7 +2,7 @@ package compress;
 
 public class OwnArrayList<E> {
  
-    private Object objects[];
+    private transient Object objects[];
     private int index;
     private int size;
     private static final int SIZE_FACTOR=5;
