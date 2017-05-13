@@ -57,7 +57,8 @@ public class HuffmanCompress {
             }
             OwnArrayList<Integer> bits = (OwnArrayList<Integer>) lli.get(c);
             for (int m = 0; m < bits.size(); m++){
-                out.write(((Integer) bits.get(m)).intValue());
+                int b = (Integer) bits.get(m);
+                out.write(b);
             }
 //            for (int b : bits){
 //                out.write(b);
