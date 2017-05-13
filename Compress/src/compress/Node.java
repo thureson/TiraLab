@@ -1,6 +1,5 @@
 package compress;
 
-/* Pakollinen osa puu-rakennetta */
 public class Node implements Comparable {
     private char key;
     private Node left;
@@ -14,7 +13,6 @@ public class Node implements Comparable {
         this.freq = freq;
     }
     
-    /* Tarkistetaan onko solmulla lapsia */
     public boolean isLeaf(){
         if (left == null && right == null){
             return true;
@@ -23,6 +21,7 @@ public class Node implements Comparable {
         }
     }
     
+    @Override
     public int compareTo(Object o){
         Node n = (Node) o;
         if (this.returnFreq() == n.returnFreq()){

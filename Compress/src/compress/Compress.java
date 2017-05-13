@@ -20,8 +20,8 @@ public class Compress {
 //        }
         
         //tests
-        File inputFile = new File("/home/thureson/TiraLab/testIn");
-        File outputFile = new File("/home/thureson/TiraLab/testOut");
+        File inputFile = new File("/home/thureson/TiraLab/testOut");
+        File outputFile = new File("/home/thureson/TiraLab/testRet");
         
 //        File inputFile  = new File(args[0]);
 //        File outputFile = new File(args[1]);
@@ -31,7 +31,7 @@ public class Compress {
         OutStream out = new OutStream(new BufferedOutputStream(new FileOutputStream(outputFile)));
         InStream ins = new InStream(new BufferedInputStream(new FileInputStream(inputFile)));
         try {
-            compress(in, out);
+            decompress(ins, out);
         } finally {
             out.close();
             in.close();
@@ -40,7 +40,7 @@ public class Compress {
     
     public static void compress(InputStream in, OutStream out) throws IOException{
         Huffman huffman = new Huffman();
-        huffman.compress("xvzbnmbfsdkjhfjkweryuitwjlgjsöoiwpuiohslkjhvxmnbmzjhkfsfuiweyuriyhiudhaiucgyuwfduizcsfgqfwyetfyxvzbnmbfsdkjhfjkweryuitwjlgjsöoiwpuiohslkjhvxmnbmzjhkfsfuiweyuriyhiudhaiucgyuwfduizcsfgqfwyetfyxvzbnmbfsdkjhfjkweryuitwjlgjsöoiwpuiohslkjhvxmnbmzjhkfsfuiweyuriyhiudhaiucgyuwfduizcsfgqfwyetfyxvzbnmbfsdkjhfjkweryuitwjlgjsöoiwpuiohslkjhvxmnbmzjhkfsfuiweyuriyhiudhaiucgyuwfduizcsfgqfwyetfyxvzbnmbfsdkjhfjkweryuitwjlgjsöoiwpuiohslkjhvxmnbmzjhkfsfuiweyuriyhiudhaiucgyuwfduizcsfgqfwyetfyxvzbnmbfsdkjhfjkweryuitwjlgjsöoiwpuiohslkjhvxmnbmzjhkfsfuiweyuriyhiudhaiucgyuwfduizcsfgqfwyetfy".toCharArray(), in, out);
+        huffman.compress("Testing my test file, fun!".toCharArray(), in, out);
     }
     
     public static void decompress(InStream ins, OutStream out) throws IOException{

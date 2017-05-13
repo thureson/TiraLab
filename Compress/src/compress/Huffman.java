@@ -17,21 +17,7 @@ import java.util.PriorityQueue;
 public class Huffman {
     
     public void compress(char[] input, InputStream in, OutStream out) throws IOException{
-//        ArrayList<Integer> ins = new ArrayList<>();
-//        while (true){
-//            int r = in.read();
-//            if (r == 0){
-//                break;
-//            }
-//            ins.add(r);
-//        }
-        
         int[] freqTable = freqTable(input);
-//        int[] ft = new int[256];
-//        for (int i : ins){
-//            ft[i]++;
-//        }
-
 
         Node root = huffmanTree(freqTable);
         Coding coding = new Coding(root);
@@ -51,6 +37,7 @@ public class Huffman {
         /* header */
         Header header = new Header(out);
         header.writeNodes(root);
+        out.writeChar('\0');
         
         /* encoding */
         while (true){
@@ -60,24 +47,15 @@ public class Huffman {
             }
             encoder.write(c);
         }
-        
-//        while (true){
-//            int c = in.read();
-//            encoder.write(c);
-//        }
     }
     
-    public void decompress(InStream in, OutStream out) throws IOException{
+    public void decompress(InStream in, OutStream out) throws IOException{        
         int[] freqTable = freqTableDecoded(in);
         Node root = huffmanTree(freqTable);
         
         Node temp = root;
         int count = 0;
         while (true){
-//            if (count == 17){
-//                break;
-//            }
-            
             if (temp.isLeaf()){
                 out.writeChar(temp.returnKey());
                 temp = root;
@@ -123,12 +101,43 @@ public class Huffman {
     
     public static int[] freqTableDecoded(InStream in) throws IOException{
         int[] freqTable = new int[256];
-        int max = in.readByte();
-        for (int count = 0; count < max; count++){
-            int character = in.readByte();
+        int character;
+        while (true){
+            character = in.readByte();
             int amount = in.readByte();
-            freqTable[character] = amount;
+            System.out.println(character + " a: " +  amount);
+            freqTable[character] = amount;          
         }
         return freqTable;
     }
+    
+//    public static void recreateTree() {
+//        // read in Huffman trie from input stream
+//        Node root = readTrie(); 
+//        // number of bytes to write
+//        int length = BinaryStdIn.readInt();
+//        // decode using the Huffman trie
+//        for (int i = 0; i < length; i++) {
+//            Node x = root;
+//            while (!x.isLeaf()) {
+//                boolean bit = BinaryStdIn.readBoolean();
+//                if (bit) x = x.right;
+//                else     x = x.left;
+//            }
+//            BinaryStdOut.write(x.ch, 8);
+//        }
+//        BinaryStdOut.close();
+//    }
+//    
+//    private static Node rebuildTree() {
+//        boolean isLeaf = BinaryStdIn.readBoolean();
+//        if (isLeaf) {
+//            return new Node(BinaryStdIn.readChar(), -1, null, null);
+//        }
+//        else {
+//            return new Node('\0', -1, rebuildTree(), rebuildTree());
+//        }
+//    }
+
+
 }

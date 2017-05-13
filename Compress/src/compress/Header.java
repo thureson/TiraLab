@@ -5,6 +5,8 @@
  */
 package compress;
 
+import java.io.IOException;
+
 /**
  *
  * @author thureson
@@ -17,15 +19,13 @@ public class Header {
         this.out = out;
     }
     
-    public void writeNodes(Node node){
+    public void writeNodes(Node node) throws IOException{
         if (node.isLeaf()){
-            try{
-                out.writeChar(node.returnKey());
-                out.writeInt(node.returnFreq());
-            } catch (Exception e){
-                System.out.println("node write error");
-            }
+            out.write(0);
+            out.writeChar(node.returnKey());
+            out.writeInt(node.returnFreq());
         } else {
+            out.write(1);
             writeNodes(node.returnLeft());
             writeNodes(node.returnRight());
             

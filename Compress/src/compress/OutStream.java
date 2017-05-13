@@ -38,6 +38,5 @@ public class OutStream {
             write(0);
         }
         output.close();
-    }
-	
+    }	
 }

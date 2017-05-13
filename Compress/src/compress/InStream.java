@@ -19,7 +19,7 @@ public class InStream {
         if (bitsRemaining == 0) {
             currentByte = input.read();
             if (currentByte == -1)
-                    return -1;
+                return -1;
             bitsRemaining = 8;
         }
         bitsRemaining--;
@@ -32,6 +32,10 @@ public class InStream {
 //                currentByte++;
 //                bitsFilled = 0;
 //        }
+    }
+    
+    public int readBit() throws IOException{
+        return input.read();
     }
     
     public int readByte() throws IOException{
