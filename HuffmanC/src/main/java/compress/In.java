@@ -6,7 +6,7 @@ import java.io.InputStream;
 
 /**
     * Handles input from file as bytes/bits. 
-    * <p>Used to read single bits from InputStream</p>
+    * Used to read single bits from InputStream
 */
 
 public class In {

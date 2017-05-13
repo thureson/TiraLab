@@ -27,6 +27,8 @@ public class Node implements Comparable {
     
     /**
     * Checks if the node is a leaf node
+    * @return true if no children
+    * @return false if children
     */
     
     public boolean isLeaf(){

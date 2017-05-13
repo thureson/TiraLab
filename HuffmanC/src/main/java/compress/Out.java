@@ -5,7 +5,6 @@ import java.io.OutputStream;
 
 /**
     * Handles output to file writing one bit a time. 
-    * <p></p>
 */
 
 public class Out {

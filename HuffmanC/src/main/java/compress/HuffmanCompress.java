@@ -41,7 +41,7 @@ public class HuffmanCompress {
         Frequeancies fq = getFrequeancies(inputFile);
         Node root = fq.buildTree();
         
-        // Write headerfile: Form: pre-order tree traversal, 0 -> not a leaf, 1 -> leaf => next 8 bits are read as char
+        // Write headerfile: Form: pre-order tree traversal, 0, not a leaf, 1, leaf, next 8 bits are read as char
         writeHeader(root, headerOut);
         
         // Build complete Huffman-codes for each char (range 0-255, ASCII)
@@ -100,7 +100,8 @@ public class HuffmanCompress {
     }
     
     /**
-    * Write a header file in pre-order form, 0 marking not leaf, 1 marking leaf -> read next 8 bits as char. 
+    * Write a header file in pre-order form, 0 marking not leaf, 1 marking leaf,
+    * read next 8 bits as char. 
     * @param node Node being writed..
     * @param out Outstream to header file.
     * @throws IOException if errors writing the header file.

@@ -14,17 +14,13 @@ public class PQ<T extends Comparable<T>> {
             resize(2 * index + 1);
         }
         array[++index] = t;
-        swim(index);
+        sortHeap(index);
     }
 
     public T delMin(){
-        if (isEmpty()){
-            return null;
-        }
-        
         T t = array[1];
-        exch(1,index--);
-        array[index+1] = null;
+        swap(1,index--);
+        array[index + 1] = null;
         sink(1);
 
         if (index == (array.length -1)/4){
@@ -44,10 +40,10 @@ public class PQ<T extends Comparable<T>> {
         array = copy;
     }
 
-    private void swim(int k){
-        while (k > 1 && isMore(k/2, k)){
-            exch(k/2,k);
-            k = k/2;
+    private void sortHeap(int k){
+        while (k > 1 && isMore(k * 2, k)){
+            swap(k * 2, k);
+            k = k * 2;
         }
     }
 
@@ -58,18 +54,20 @@ public class PQ<T extends Comparable<T>> {
             if(isMore(j, k)){
                 break;
             }
-            exch(k,j);
+            swap(k,j);
             k = j;
         }
     }
 
     private boolean isMore(int i, int j){
-        if (array[i].compareTo(array[j]) < 0)
+        if (array[i].compareTo(array[j]) > 0){
             return true;
-        return false;
+        } else {
+            return false;
+        }
     }
 
-    private void exch(int i, int j){
+    private void swap(int i, int j){
         T temp = array[i];
         array[i] = array[j];
         array[j] = temp;

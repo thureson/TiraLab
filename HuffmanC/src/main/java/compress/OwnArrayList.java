@@ -40,11 +40,11 @@ public class OwnArrayList<E> {
     }
      
     public Object get(int i) throws Exception{
-        return this.objects[i];  
+        return (E) this.objects[i];  
     }
     
-    public void set(int i, Object o) throws Exception{
-        this.objects[i] = o;  
+    public void set(int i, E e) throws Exception{
+        this.objects[i] = e;  
     }
      
     public void remove(int i) throws Exception{
