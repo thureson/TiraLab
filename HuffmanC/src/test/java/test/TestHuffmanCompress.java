@@ -5,12 +5,13 @@
  */
 package test;
 
+import java.io.File;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
+//import testFile;
 
 /**
  *
@@ -19,6 +20,8 @@ import static org.junit.Assert.*;
 public class TestHuffmanCompress {
     
     public TestHuffmanCompress() {
+//        File headerFile = new File("/home/thureson/TiraLab/testFile" testFile);
+//        File headerFile = new File(testFile);
     }
     
     @BeforeClass
@@ -36,7 +39,11 @@ public class TestHuffmanCompress {
     @After
     public void tearDown() {
     }
-
+    
+    @Test
+    public void getFrequencies(){
+        
+    }
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //

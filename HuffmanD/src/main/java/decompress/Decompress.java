@@ -26,7 +26,7 @@ public class Decompress {
         // Init files needed
         File inputFile  = new File(args[0]);
         File outputFile = new File(args[1]);
-        File headerFile  = new File("/home/thureson/TiraLab/testheader");
+        File headerFile  = new File(args[0] + "header");
 
         // Open streams
         In in = new In(new BufferedInputStream(new FileInputStream(inputFile)));

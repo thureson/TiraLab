@@ -30,7 +30,7 @@ public class HuffmanCompress {
         // Open files
         File inputFile  = new File(args[0]);
         File outputFile = new File(args[1]);
-        File headerFile = new File("/home/thureson/TiraLab/testheader");
+        File headerFile = new File(args[1] + "header");
 
         // Open IO-streams for opened files
         In in = new In(new BufferedInputStream(new FileInputStream(inputFile)));
