@@ -45,6 +45,6 @@ public class OwnArrayList<E> {
     }
     
     public int size() throws Exception{
-        return this.size;
+        return this.size - SIZE_FACTOR;
     }
 }

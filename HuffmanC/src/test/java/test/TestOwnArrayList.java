@@ -5,12 +5,13 @@
  */
 package test;
 
+import compress.OwnArrayList;
 import org.junit.After;
 import org.junit.AfterClass;
+import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  *
@@ -36,7 +37,13 @@ public class TestOwnArrayList {
     @After
     public void tearDown() {
     }
-
+    
+    @Test
+    public void adding() throws Exception{
+        OwnArrayList arr = new OwnArrayList();
+        arr.add(4);
+        assertEquals(arr.get(0), 4);
+    }
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
