@@ -2,6 +2,7 @@ package test;
 
 import compress.CodeTable;
 import compress.Node;
+import compress.OwnArrayList;
 import org.junit.After;
 import org.junit.AfterClass;
 import static org.junit.Assert.assertEquals;
@@ -36,7 +37,9 @@ public class TestCodeTable {
 
     @Test
     public void returningRoot() throws Exception{
-        CodeTable ct = new CodeTable(new Node('a', null, null, 2));
-//        assertEquals(ct.returnCode('a'), 2);
+        Node root = new Node('a', null, null, 2);
+        CodeTable ct = new CodeTable(root);
+        ct.build(root, new OwnArrayList())
+        assertEquals(2, ct.build(root, new OwnArrayList()));
     }
 }
