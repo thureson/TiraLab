@@ -1,8 +1,9 @@
 Mitä on testattu, miten tämä tehtiin
-	Tässä vaiheessa testejä on vasta asioissa joissa ei vaadita IO:ta. Testaan Node-luokkaa
+
+Tässä vaiheessa testejä on vasta asioissa joissa ei vaadita IO:ta. Testaan Node-luokkaa
 
 Minkälaisilla syötteillä testaus tehtiin (vertailupainotteisissa töissä tärkeää)
-	Jos on mahdollista saada esim true tai false if-else-kyselyllä, testataan molempia mahdollisuuksia, toivottaen jopa useammin ottaen huomioon rajatapaukset
+Jos on mahdollista saada esim true tai false if-else-kyselyllä, testataan molempia mahdollisuuksia, toivottaen jopa useammin ottaen huomioon rajatapaukset
 
 Miten testit voidaan toistaa
 Ohjelman toiminnan empiirisen testauksen tulosten esittäminen graafisessa muodossa.
