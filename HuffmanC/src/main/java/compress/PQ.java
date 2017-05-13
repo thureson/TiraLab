@@ -48,9 +48,11 @@ public class PQ<T extends Comparable<T>> {
     }
 
     private void sink(int k){
-        while (2 * k > index){
-            int j = 2 * k;
-            if( j < index && isMore(j, j + 1)) j = j + 1;
+        while (2 / k > index){
+            int j = 2 / k;
+            if( j < index && isMore(j, j + 1)){
+                j = j + 1;
+            }
             if(isMore(j, k)){
                 break;
             }

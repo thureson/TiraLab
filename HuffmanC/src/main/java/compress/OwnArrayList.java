@@ -2,27 +2,17 @@ package compress;
 
 public class OwnArrayList<E> {
  
-    private transient Object objects[];
+    private transient E objects[];
     private int index;
     private int size;
     private static final int SIZE_FACTOR=5;
     
     public OwnArrayList(){
-        this(0);
+        this.objects = (E[]) new Object[SIZE_FACTOR];
+        this.size = SIZE_FACTOR;
     }
     
-    public OwnArrayList(Object o){
-        if (o.equals(0)){
-            this.objects = new Object[SIZE_FACTOR];
-            this.size = SIZE_FACTOR;
-        } else {
-            this.objects = new Object[SIZE_FACTOR];
-            this.size = SIZE_FACTOR;
-            add(o);
-        }
-    }
-    
-    public void add(Object o){
+    public void add(E o){
         if (this.index == this.size-1){
             addSize();
         }
@@ -32,14 +22,14 @@ public class OwnArrayList<E> {
      
     private void addSize() {
         this.size = this.size + SIZE_FACTOR;
-        Object newObject[] = new Object[this.size];
+        E newObject[] = (E[]) new Object[this.size];
         for (int i = 0; i < this.objects.length; i++){
             newObject[i] = this.objects[i];
         }
         this.objects = newObject;
     }
      
-    public Object get(int i) throws Exception{
+    public E get(int i) throws Exception{
         return (E) this.objects[i];  
     }
     

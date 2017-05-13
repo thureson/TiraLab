@@ -34,7 +34,9 @@ public class CodeTable {
     
     public void build(Node node, OwnArrayList<Integer> bits) throws Exception{
         if (node.isLeaf()){
-            codeTable.set(node.returnKey(), new OwnArrayList<Integer>(bits));
+            OwnArrayList array = new OwnArrayList<>();
+            array.add(bits);
+            codeTable.set(node.returnKey(), array);
         } else {
             bits.add(0);
             build(node.returnLeft(), bits);

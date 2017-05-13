@@ -38,6 +38,8 @@ public class Frequeancies {
     
     public Node buildTree(){
         PriorityQueue<Node> pq = new PriorityQueue<>();
+//        PQ pk = new PQ();
+        
                 
         for (char i = 0; i < 256; i++){
             if (frequencies[i] > 0){
