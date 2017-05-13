@@ -46,8 +46,9 @@ public class HuffmanCompress {
         
         // Build complete Huffman-codes for each char (range 0-255, ASCII)
         CodeTable cd = new CodeTable(root);
-        cd.build(root, new OwnArrayList());
-        OwnArrayList<OwnArrayList<Integer>> lli = cd.returnCodeTable();
+        cd.build(root, new ArrayList<>());
+//        OwnArrayList<OwnArrayList<Integer>> lli = cd.returnCodeTable();
+        List<List<Integer>> lli = cd.returnCodeTable();
         
         // Read inputfile one byte a time, write huffmancode to outputfile using CodeTable
         while (true){
@@ -55,14 +56,15 @@ public class HuffmanCompress {
             if (c == -1){
                 break;
             }
-            OwnArrayList<Integer> bits = (OwnArrayList<Integer>) lli.get(c);
-            for (int m = 0; m < bits.size(); m++){
-                int b = (int) bits.get(m);
-                out.write(b);
-            }
-//            for (int b : bits){
+//            OwnArrayList<Integer> bits = (OwnArrayList<Integer>) lli.get(c);
+//            for (int m = 0; m < bits.size(); m++){
+//                int b = (int) bits.get(m);
 //                out.write(b);
 //            }
+            List<Integer> bits = lli.get(c);
+            for (int b : bits){
+                out.write(b);
+            }
         }
 
         //To be EOF
